@@ -23,8 +23,8 @@ requirements:
     - python
 
 test:
-  imports:
-    - cudamat
+  commands:
+    - echo "{{ python }} -c 'import cudamat'"
 
 about:
   home: https://github.com/cudamat/cudamat
