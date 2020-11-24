@@ -1,0 +1,43 @@
+package:
+  name: cudamat
+  version: 0.201124
+
+source:
+  url: https://github.com/cudamat/cudamat/archive/21baa0a82f189fae40cab3ab607c11cabfee8899.tar.gz
+  sha256: 357671823ecb57cc9aab399214e3629f5a53f61de986749283f93d269d64dc4f
+
+build:
+  number: 0
+  skip: True  # [win or py2k or osx]
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('cuda') }}
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - cudamat
+
+about:
+  home: https://github.com/cudamat/cudamat
+  license: BSD-3
+  license_family: GPL
+  summary: 'A package collecting a heterogeneous set of tools.'
+  description: |
+    The aim of the cudamat project is to make it easy to perform basic
+    matrix calculations on CUDA-enabled GPUs from Python.
+    cudamat provides a Python matrix class that performs calculations on a GPU. 
+  doc_url: https://github.com/cudamat/cudamat
+  dev_url: https://github.com/cudamat/cudamat
+
+extra:
+  recipe-maintainers:
+    - GiovanniBussi
