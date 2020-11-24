@@ -21,6 +21,7 @@ requirements:
   run:
     - python
     - numpy
+    - cudatoolkit-dev
 
 test:
   commands:
@@ -30,7 +31,7 @@ about:
   home: https://github.com/cudamat/cudamat
   license: BSD-3
   license_family: GPL
-  summary: 'A package collecting a heterogeneous set of tools.'
+  summary: 'CUDAMat: A CUDA-based matrix class for Python'
   description: |
     The aim of the cudamat project is to make it easy to perform basic
     matrix calculations on CUDA-enabled GPUs from Python.

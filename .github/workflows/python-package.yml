@@ -32,6 +32,6 @@ jobs:
         cd gpgpu-sim_distribution-4.0.1
         source setup_environment release
         make
-        conda install -c local cudamat
+        conda install -c conda-forge -c local cudamat
         python -c 'import cudamat'
         
