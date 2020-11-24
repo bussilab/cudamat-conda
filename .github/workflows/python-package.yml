@@ -22,3 +22,16 @@ jobs:
         source activate base
         export CPU_COUNT=2
         conda-build -c conda-forge recipe
+    - name: Install gpgpu-sim
+      run: |
+        source activate base
+        conda install cudatoolkit-dev
+        sudo apt-get install build-essential xutils-dev bison zlib1g-dev flex libglu1-mesa-dev
+        wget https://github.com/gpgpu-sim/gpgpu-sim_distribution/archive/v4.0.1.tar.gz
+        tar xzf v4.0.1.tar.gz
+        cd gpgpu-sim_distribution-4.0.1
+        source setup_environment release
+        make
+        conda install -c local cudamat
+        python -c 'import cudamat'
+        
