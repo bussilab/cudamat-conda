@@ -27,9 +27,8 @@ jobs:
         source activate base
         conda install -c conda-forge cudatoolkit-dev
         sudo apt-get install build-essential xutils-dev bison zlib1g-dev flex libglu1-mesa-dev
-        wget https://github.com/gpgpu-sim/gpgpu-sim_distribution/archive/v4.0.1.tar.gz
-        tar xzf v4.0.1.tar.gz
-        cd gpgpu-sim_distribution-4.0.1
+        git clone git@github.com:gpgpu-sim/gpgpu-sim_distribution.git
+        cd gpgpu-sim_distribution
         source setup_environment release
         make
         conda install -c conda-forge -c local cudamat
